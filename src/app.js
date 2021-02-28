@@ -1,16 +1,18 @@
 const express = require('express')
 const path = require('path')
+const hbs = require('hbs')
 const axios = require('axios').default
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
+const port = process.env.PORT || 3000
 
 app.use(express.static(publicDirectoryPath))
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
-
-const port = process.env.PORT || 3000
+hbs.registerPartials(partialsPath)
 
 app.get('/', (req, res) => {
   res.render('index')
@@ -27,7 +29,10 @@ app.get('/fish', async (req, res) => {
     }
     fish += '</ul>' 
 
-    res.send(fish)
+    // res.send(fish)
+    res.render('fishes', {
+      fishes: fish
+    })
   } catch (err) {
     console.log('error getting all fish', err)
   }

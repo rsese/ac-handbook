@@ -1,21 +1,38 @@
 body {
+  text-align: center;
   font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
-  margin: 0px;
+  color: #c48d3f;
+  margin: 24px 0 24px 0;
   padding: 0px;
+  background-image: url('../images/animal-crossing-new-horizons-1million-artwork.jpg');
+}
+
+a {
+  color: #81f1f7;
+  font-weight: bold;
 }
 
 main {
-  background-color: aqua;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
   margin: 0px auto;
-  min-height: 840px;
+  min-height: 480px;
   padding: 32px;
-  width: 960px;
+  width: 480px;
 }
 
 ul {
   display: inline-block;
   padding-left: 0px;
   text-align: left;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.95);
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 4px #c48d3f dashed;
+  padding: 32px;
+  width: 480px;
+  margin: 0px auto;
 }
