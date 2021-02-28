@@ -20,12 +20,24 @@ app.get('/fish', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/fish')
     let fish = '<ul>' 
+    console.log(data.data)
     for (f in data.data) {
-      fish += `<li>${f}</li>`
+      console.log(f)
+      fish += `<li><a href="/fish/${data.data[f].id}">${f}</a></li>`
     }
     fish += '</ul>' 
 
     res.send(fish)
+  } catch (err) {
+    console.log('error getting all fish', err)
+  }
+})
+
+app.get('/fish/:id', async (req, res) => {
+  try {
+    const data = await axios.get(`https://acnhapi.com/v1/fish/${req.params.id}`)
+
+    res.send(data.data)
   } catch (err) {
     console.log('error getting fish', err)
   }
