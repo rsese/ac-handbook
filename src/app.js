@@ -54,6 +54,10 @@ app.get('/fish/:id', async (req, res) => {
   }
 })
 
+app.get('*', (req, res) => {
+  res.render('404')
+})
+
 app.listen(port, () => {
   console.log(`started server on port ${port}`)
 })
