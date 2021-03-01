@@ -1,8 +1,8 @@
-# Animal Crossing Handbook
+# Animal Crossing Handbook :notebook:
 
 Simple web client for http://acnhapi.com/!
 
-## Thanks
+## Thanks :bow:
 
 * http://acnhapi.com/.  All the data.
 * https://animalcrossingworld.com/2020/04/get-animal-crossing-new-horizons-phone-desktop-wallpapers-created-from-new-official-artwork/.  Site background image.
