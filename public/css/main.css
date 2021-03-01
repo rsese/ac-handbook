@@ -2,6 +2,7 @@ body {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
+  line-height: 1.5;
   color: #c48d3f;
   margin: 24px 0 24px 0;
   padding: 0px;
@@ -11,6 +12,15 @@ body {
 a {
   color: #81f1f7;
   font-weight: bold;
+}
+
+img {
+  width: 480px;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 18px;
 }
 
 main {

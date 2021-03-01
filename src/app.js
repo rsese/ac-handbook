@@ -42,7 +42,13 @@ app.get('/fish/:id', async (req, res) => {
   try {
     const data = await axios.get(`https://acnhapi.com/v1/fish/${req.params.id}`)
 
-    res.send(data.data)
+    // res.send(data.data)
+    // res.send(data.data['file-name'])
+    res.render('fish', {
+      name: data.data['file-name'],
+      image_uri: data.data.image_uri,
+      museum_phrase: data.data['museum-phrase'],
+    })
   } catch (err) {
     console.log('error getting fish', err)
   }
