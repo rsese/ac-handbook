@@ -22,14 +22,12 @@ app.get('/fish', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/fish')
     let fish = '<ul>' 
-    console.log(data.data)
+
     for (f in data.data) {
-      console.log(f)
       fish += `<li><a href="/fish/${data.data[f].id}">${f}</a></li>`
     }
     fish += '</ul>' 
 
-    // res.send(fish)
     res.render('fishes', {
       fishes: fish
     })
@@ -42,8 +40,6 @@ app.get('/fish/:id', async (req, res) => {
   try {
     const data = await axios.get(`https://acnhapi.com/v1/fish/${req.params.id}`)
 
-    // res.send(data.data)
-    // res.send(data.data['file-name'])
     res.render('fish', {
       name: data.data['file-name'],
       image_uri: data.data.image_uri,
