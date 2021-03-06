@@ -6,15 +6,15 @@ const router = new express.Router()
 router.get('/fish', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/fish')
-    let fish = '<ul>' 
+    let fishString = '<ul>' 
 
-    for (f in data.data) {
-      fish += `<li><a href="/fish/${data.data[f].id}">${f}</a></li>`
+    for (fish in data.data) {
+      fishString += `<li><a href="/fish/${data.data[fish].id}">${fish}</a></li>`
     }
-    fish += '</ul>' 
+    fishString += '</ul>' 
 
     res.render('fishes', {
-      fishes: fish
+      fishes: fishString
     })
   } catch (err) {
     console.log('error getting all fish', err)

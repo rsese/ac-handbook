@@ -6,15 +6,15 @@ const router = new express.Router()
 router.get('/sea-creatures', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/sea')
-    let seaCreatures = '<ul>' 
+    let seaCreaturesString = '<ul>' 
 
-    for (f in data.data) {
-      seaCreatures += `<li><a href="/sea-creatures/${data.data[f].id}">${f}</a></li>`
+    for (seaCreature in data.data) {
+      seaCreaturesString += `<li><a href="/sea-creatures/${data.data[seaCreature].id}">${seaCreature}</a></li>`
     }
-    seaCreatures += '</ul>' 
+    seaCreaturesString += '</ul>' 
 
     res.render('sea-creatures', {
-      seaCreatures: seaCreatures 
+      seaCreatures: seaCreaturesString
     })
   } catch (err) {
     console.log('error getting all sea creatures', err)
