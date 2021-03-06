@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-const axios = require('axios').default
+const fishRouter = require('./routers/fish')
+const seaCreaturesRouter = require('./routers/sea-creatures')
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -9,6 +10,8 @@ const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 const port = process.env.PORT || 3000
 
+app.use(fishRouter)
+app.use(seaCreaturesRouter)
 app.use(express.static(publicDirectoryPath))
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
@@ -16,70 +19,6 @@ hbs.registerPartials(partialsPath)
 
 app.get('/', (req, res) => {
   res.render('index')
-})
-
-app.get('/fish', async (req, res) => {
-  try {
-    const data = await axios.get('https://acnhapi.com/v1/fish')
-    let fish = '<ul>' 
-
-    for (f in data.data) {
-      fish += `<li><a href="/fish/${data.data[f].id}">${f}</a></li>`
-    }
-    fish += '</ul>' 
-
-    res.render('fishes', {
-      fishes: fish
-    })
-  } catch (err) {
-    console.log('error getting all fish', err)
-  }
-})
-
-app.get('/fish/:id', async (req, res) => {
-  try {
-    const data = await axios.get(`https://acnhapi.com/v1/fish/${req.params.id}`)
-
-    res.render('fish', {
-      name: data.data['file-name'],
-      image_uri: data.data.image_uri,
-      museum_phrase: data.data['museum-phrase'],
-    })
-  } catch (err) {
-    console.log('error getting fish', err)
-  }
-})
-
-app.get('/sea-creatures', async (req, res) => {
-  try {
-    const data = await axios.get('https://acnhapi.com/v1/sea')
-    let seaCreatures = '<ul>' 
-
-    for (f in data.data) {
-      seaCreatures += `<li><a href="/sea-creatures/${data.data[f].id}">${f}</a></li>`
-    }
-    seaCreatures += '</ul>' 
-
-    res.render('sea-creatures', {
-      seaCreatures: seaCreatures 
-    })
-  } catch (err) {
-    console.log('error getting all sea creatures', err)
-  }
-})
-
-app.get('/sea-creatures/:id', async (req, res) => {
-  try {
-    const data = await axios.get(`https://acnhapi.com/v1/sea/${req.params.id}`)
-
-    res.render('sea-creature', {
-      name: data.data['file-name'],
-      image_uri: data.data.image_uri,
-      museum_phrase: data.data['museum-phrase'],
-    })
-  } catch (err) {
-    console.log('error getting sea creature', err)
-  }
 })
 
 app.get('*', (req, res) => {
