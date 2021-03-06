@@ -3,6 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 const fishRouter = require('./routers/fish')
 const seaCreaturesRouter = require('./routers/sea-creatures')
+const villagersRouter = require('./routers/villagers')
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -12,6 +13,7 @@ const port = process.env.PORT || 3000
 
 app.use(fishRouter)
 app.use(seaCreaturesRouter)
+app.use(villagersRouter)
 app.use(express.static(publicDirectoryPath))
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
