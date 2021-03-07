@@ -29,8 +29,11 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('*', (req, res) => {
-  res.render('404')
+// http://expressjs.com/en/starter/faq.html#how-do-i-handle-404-responses
+app.use(function (req, res, next) {
+  res.status(404).render('404', {
+    meta_description: "Animal Crossing handbook -- web client for http://acnhapi.com/."
+  })
 })
 
 app.listen(port, () => {
