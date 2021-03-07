@@ -24,7 +24,9 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {
+    meta_description: "Animal Crossing handbook -- web client for http://acnhapi.com/."
+  })
 })
 
 app.get('*', (req, res) => {
