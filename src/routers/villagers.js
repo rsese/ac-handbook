@@ -33,6 +33,7 @@ router.get('/villagers/:id', async (req, res) => {
       image_uri: data.data.image_uri,
       catch_phrase: catchPhrase,
       meta_description: `${name} says ${catchPhrase}`,
+      image_alt: name,
     })
   } catch (err) {
     console.log('error getting villager', err)

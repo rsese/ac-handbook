@@ -32,6 +32,7 @@ router.get('/bugs/:id', async (req, res) => {
       image_uri: data.data.image_uri,
       museum_phrase: data.data['museum-phrase'],
       meta_description: name,
+      image_alt: name,
     })
   } catch (err) {
     console.log('error getting bug', err)
