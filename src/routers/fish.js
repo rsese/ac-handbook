@@ -14,7 +14,8 @@ router.get('/fish', async (req, res) => {
     fishString += '</ul>' 
 
     res.render('fishes', {
-      fishes: fishString
+      fishes: fishString,
+      meta_description: "All the fish."
     })
   } catch (err) {
     console.log('error getting all fish', err)
@@ -24,11 +25,13 @@ router.get('/fish', async (req, res) => {
 router.get('/fish/:id', async (req, res) => {
   try {
     const data = await axios.get(`https://acnhapi.com/v1/fish/${req.params.id}`)
+    const name = data.data['file-name']
 
     res.render('fish', {
-      name: data.data['file-name'],
+      name: name,
       image_uri: data.data.image_uri,
       museum_phrase: data.data['museum-phrase'],
+      meta_description: name,
     })
   } catch (err) {
     console.log('error getting fish', err)

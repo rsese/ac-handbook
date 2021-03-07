@@ -14,7 +14,8 @@ router.get('/sea-creatures', async (req, res) => {
     seaCreaturesString += '</ul>' 
 
     res.render('sea-creatures', {
-      seaCreatures: seaCreaturesString
+      seaCreatures: seaCreaturesString,
+      meta_description: "All the sea creatures."
     })
   } catch (err) {
     console.log('error getting all sea creatures', err)
@@ -24,11 +25,13 @@ router.get('/sea-creatures', async (req, res) => {
 router.get('/sea-creatures/:id', async (req, res) => {
   try {
     const data = await axios.get(`https://acnhapi.com/v1/sea/${req.params.id}`)
+    const name = data.data['file-name']
 
     res.render('sea-creature', {
-      name: data.data['file-name'],
+      name: name,
       image_uri: data.data.image_uri,
       museum_phrase: data.data['museum-phrase'],
+      meta_description: name,
     })
   } catch (err) {
     console.log('error getting sea creature', err)
