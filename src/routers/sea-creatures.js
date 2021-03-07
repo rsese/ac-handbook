@@ -36,6 +36,10 @@ router.get('/sea-creatures/:id', async (req, res) => {
     })
   } catch (err) {
     console.log('error getting sea creature', err)
+    res.render('error', {
+      error: err.message,
+      meta_description: "Animal Crossing handbook -- web client for http://acnhapi.com/.",
+    })
   }
 })
 

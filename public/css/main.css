@@ -60,6 +60,12 @@ footer {
   margin: 0px auto;
 }
 
+.error {
+  color:	white;
+  background-color: #EC6C6D;
+  padding: 1em;
+}
+
 @media only screen and (max-width: 480px) {
   body {
     font-size: 16px;

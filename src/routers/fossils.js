@@ -36,6 +36,10 @@ router.get('/fossils/:name', async (req, res) => {
     })
   } catch (err) {
     console.log('error getting fossil', err)
+    res.render('error', {
+      error: err.message,
+      meta_description: "Animal Crossing handbook -- web client for http://acnhapi.com/.",
+    })
   }
 })
 
