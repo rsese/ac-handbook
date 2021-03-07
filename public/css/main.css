@@ -15,8 +15,9 @@ a {
 }
 
 img {
-  margin-bottom: 1.5em;
+  margin-bottom: 24px;
   width: 480px;
+  box-sizing: border-box;
 }
 
 .frame {
@@ -29,7 +30,6 @@ p {
 
 blockquote {
   font-style: italic;
-  font-size: 18px;
   margin-bottom: 1.5em;
 }
 
@@ -46,6 +46,7 @@ ul {
   padding-left: 0px;
   text-align: left;
   margin-bottom: 1.5em;
+  line-height: 2;
 }
 
 footer {
@@ -56,4 +57,16 @@ footer {
   padding: 32px;
   width: 480px;
   margin: 0px auto;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  main, footer, img {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
 }
