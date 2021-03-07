@@ -7,6 +7,7 @@ body {
   margin: 24px 0 24px 0;
   padding: 0px;
   background-image: url('../images/animal-crossing-new-horizons-1million-artwork.jpg');
+  word-wrap: break-word;
 }
 
 a {
