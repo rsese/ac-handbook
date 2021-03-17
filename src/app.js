@@ -8,6 +8,7 @@ const bugsRouter = require('./routers/bugs')
 const fossilsRouter = require('./routers/fossils')
 
 const app = express()
+app.use(express.json())
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')

@@ -1,7 +1,46 @@
 const express = require('express')
 const axios = require('axios').default
+const firebase = require("firebase");
 
 const router = new express.Router()
+
+// doesn't need to be private: https://firebase.google.com/docs/projects/api-keys
+const firebaseConfig = {
+  apiKey: "AIzaSyDCFJQGDSrbC8NSxFn3iZb6KIogj1aXUBE",
+  authDomain: "ac-handbook.firebaseapp.com",
+  projectId: "ac-handbook",
+  storageBucket: "ac-handbook.appspot.com",
+  messagingSenderId: "31917484511",
+  appId: "1:31917484511:web:7645b032d13b0748b63c6a"
+};
+
+firebase.initializeApp(firebaseConfig);
+firebase.database()
+
+router.get('/fish/:id/comments', async (req, res) => {
+  // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#read_data_once_with_an_observer
+  const commentRef = firebase.database().ref('fish/' + req.params.id + '/comments/comment');
+
+  try {
+    let snapshot = await commentRef.once('value')
+    const comments = snapshot.val();
+    if (comments) {
+      res.send(comments)
+    } else {
+      res.status(404).send({comments: null})
+    }
+  } catch (err) {
+    res.status(500).send({comments: null})
+  }
+})
+
+router.post('/fish/:id/comments', async (req, res) => {
+  // https://firebase.google.com/docs/database/web/read-and-write?authuser=0#read_data_once_with_an_observer
+  firebase.database().ref('fish/' + req.params.id + '/comments').set({
+    comment: req.body 
+  });
+  res.send(req.body)
+})
 
 router.get('/fish', async (req, res) => {
   try {

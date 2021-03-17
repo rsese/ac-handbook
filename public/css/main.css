@@ -60,6 +60,22 @@ footer {
   margin: 0px auto;
 }
 
+textarea {
+  width: 100%;
+  padding: 1.2em;
+  box-sizing: border-box;
+  height: 10em;
+}
+
+.saved-msg {
+  display: block;
+  margin-top: 1em;
+}
+
+.hide {
+  display: none;
+}
+
 .error {
   color:	white;
   background-color: #EC6C6D;
