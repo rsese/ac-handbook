@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: #81f1f7;
+  color: #6be4ea;
   font-weight: bold;
 }
 
@@ -181,6 +181,23 @@ footer {
   border-bottom: 1px dashed #c48d3f;
   margin-bottom: .75em;
   padding-bottom: .5em;
+}
+
+.things {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: .25em;
+  row-gap: .25em;
+}
+
+.things div {
+  box-sizing: border-box;
+  border: 6px double #c48d3f;
+  padding: .35em 0 0 0;
+}
+
+.things a {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 480px) {
