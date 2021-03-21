@@ -4,7 +4,7 @@ body {
   font-size: 22px;
   line-height: 1.5;
   color: #c48d3f;
-  margin: 24px 0 24px 0;
+  margin: 0 0 24px 0;
   padding: 0px;
   background-image: url('../images/animal-crossing-new-horizons-1million-artwork.jpg');
   word-wrap: break-word;
@@ -32,6 +32,45 @@ p {
 blockquote {
   font-style: italic;
   margin-bottom: 1.5em;
+}
+
+header {
+  background-color: #b38d4f;
+  color: #fbfbfd;
+  font-weight: bold;
+  padding: .25em 1.75em;
+  margin-bottom: 1em;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-link {
+  width: 30%;
+  display: block;
+  color: #fcfafb;
+  text-decoration: none;
+  line-height: 2;
+  text-align: left;
+}
+
+.site-nav {
+  width: 70%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.site-nav a {
+  color: #fcfafb;
+  text-decoration: none;
+}
+
+.site-nav li {
+  display: inline-block;
+  margin-right: .75em;
 }
 
 main {
