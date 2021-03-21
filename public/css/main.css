@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.5;
   color: #c48d3f;
   margin: 24px 0 24px 0;
@@ -60,11 +60,11 @@ footer {
   margin: 0px auto;
 }
 
-textarea {
+#new-comment-field {
   width: 100%;
   padding: 1.2em;
   box-sizing: border-box;
-  height: 10em;
+  height: 7em;
 }
 
 .saved-msg {
@@ -80,6 +80,34 @@ textarea {
   color:	white;
   background-color: #EC6C6D;
   padding: 1em;
+}
+
+.comments {
+  display: block;
+}
+
+.comments li {
+  line-height: 1.25;
+  list-style-type: none;
+  background-color: #fdef75;
+  margin: .6em 0;
+  padding: .40em 1em;
+  color: #ee6f69;
+  font-size: .75em;
+  font-weight: 600;
+}
+
+.comments .comment-body {
+  white-space: break-spaces;
+}
+
+.comments .timeStamp {
+  display: block;
+  font-size: .7em;
+  font-weight: normal;
+  border-bottom: 1px dashed #c48d3f;
+  margin-bottom: .75em;
+  padding-bottom: .5em;
 }
 
 @media only screen and (max-width: 480px) {

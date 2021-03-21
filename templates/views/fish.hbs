@@ -7,9 +7,19 @@
       {{museum_phrase}}
     </blockquote>
     <h2>Community notes ✏️</h2>
-    <textarea id="comments" placeholder="add your comment!"></textarea>
-    <button id="save-comments-btn">save comments!</button>
-    <span class="saved-msg hide">saved ☑️!</span>
+    <section class="comments-container">
+      <ul class="comments">
+        {{#each comments}}
+          <li class="comment">
+            <span class="timeStamp">{{this.timeStamp}}</span>
+            <pre class="comment-body">{{this.body}}</pre>
+          </li>
+        {{/each}}
+      </ul>
+      <textarea id="new-comment-field" placeholder="add your comment!"></textarea>
+      <button id="save-comments-btn">save comments!</button>
+      <span class="saved-msg hide">saved ☑️!</span>
+    </section>
   </main>
 {{>footer}}
 </body>
