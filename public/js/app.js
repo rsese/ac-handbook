@@ -1,45 +1,38 @@
 const init = async function() {
-  const comments = document.querySelector('#comments')
+  const newCommentField = document.querySelector('#new-comment-field')
+  const href = window.location.href
+  const thingId = href.slice(href.lastIndexOf('/') + 1)
 
-  if (comments) {
-    const href = window.location.href
-    const fishId = href.slice(href.lastIndexOf('/') + 1)
-
-    // check for existing comments
+  document.querySelector('#save-comments-btn').addEventListener('click', async event => {
     try {
-      const response = await fetch(`/fish/${fishId}/comments`, {
-        method: 'GET', 
+      const response = await fetch(`/fish/${thingId}/comments`, {
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json'
         },
+        body: JSON.stringify({comment: newCommentField.value})
       })
 
-      // populate the comments if there are saved comments
-      if (response.status !== 404) {
-        const fishComment = await response.json()
-        comments.value = fishComment.comment
-      }
-    } catch (err) {
-      console.log(`error fetching comments`, err)
-    }
+      const savedMsg = document.querySelector('.saved-msg')
+      savedMsg.classList.toggle('hide')
+      window.setTimeout(toggle, 1000)
 
-    document.querySelector('#save-comments-btn').addEventListener('click', async event => {
-      try {
-        const response = await fetch(`/fish/${fishId}/comments`, {
-          method: 'POST', 
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({comment: comments.value})
-        })
-        const savedMsg = document.querySelector('.saved-msg')
-        savedMsg.classList.toggle('hide')
-        window.setTimeout(toggle, 1000)
-      } catch (err) {
-        console.log(`error writing comments`, err)
-      }
-    })
-  }
+      // add new comment to comment list
+      const createdComment = await response.json()
+      const newComment = document.createElement('li')
+      const newCommentTimeStamp = document.createElement('span')
+
+      newCommentTimeStamp.classList.add('timeStamp')
+      newCommentTimeStamp.appendChild(document.createTextNode(createdComment.timeStamp))
+      newComment.appendChild(newCommentTimeStamp)
+      newComment.appendChild(document.createTextNode(createdComment.body))
+      document.querySelector('.comments').appendChild(newComment)
+
+      newCommentField.value = ""
+    } catch (err) {
+      console.log(`error saving comment`, err)
+    }
+  })
 }
 
 function toggle() {
