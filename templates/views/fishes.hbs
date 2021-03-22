@@ -1,9 +1,19 @@
 {{>head}}
 <body>
   {{>header}}
-  <main>
-    {{{fishes}}}
-  </main>
-{{>footer}}
+  <div class="container">
+    <h1>fishes 🐟</h1>
+    <main>
+      <div class="things">
+        {{#each fish}}
+          <div>
+            <a href="/fish/{{this.id}}">{{this.name.name-USen}}<br>
+            <img src="{{this.image_uri}}"></a>
+          </div>
+        {{/each}}
+      </div>
+    </main>
+    {{>footer}}
+  </div>
 </body>
 </html>

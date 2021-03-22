@@ -56,6 +56,13 @@ header nav {
   text-align: left;
 }
 
+.container .home-heading {
+  text-align: center;
+  padding-top: 0;
+  margin-bottom: 1.5em;
+  margin-top: 0;
+}
+
 .site-nav {
   width: 70%;
   margin: 0;
@@ -74,24 +81,23 @@ header nav {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 780px;
   margin: 0 auto;
-}
-
-.container {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
-.container > h1 {
-  width: 100%;
+.detail-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container h1 {
   border-bottom: 2px dashed #b38d4f;
   font-size: 1.5em;
   text-align: left;
-  padding: .5em;
-  margin: .25em;
+  padding: .5em .5em .5em .75em;
+  margin: .25em .25em .5em .25em
 }
 
 main {
@@ -100,8 +106,15 @@ main {
   margin: 0px auto;
   min-height: 480px;
   padding: 32px;
-  width: 55%;
   box-sizing: border-box;
+}
+
+.detail-page main {
+  width: 55%;
+}
+
+.detail-page aside {
+  width: 45%;
 }
 
 ul {
@@ -116,7 +129,6 @@ aside {
   box-sizing: border-box;
   /* background-color: green; */
   background-color: rgba(255, 255, 255, 0.95);
-  width: 45%;
   padding: 1em;
   font-size: .70em;
 }
@@ -186,23 +198,50 @@ footer {
 .things {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: .25em;
-  row-gap: .25em;
+  column-gap: .5em;
+  row-gap: .5em;
 }
 
 .things div {
   box-sizing: border-box;
   border: 6px double #c48d3f;
-  padding: .35em 0 0 0;
+  padding: .75em 0 0 0;
 }
 
 .things a {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 780px) {
+  body {
+    font-size: 20px;
+  }
+
+  .container {
+    width: 580px;
+  }
+
+  .detail-page main, .detail-page footer, detail-page img {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .detail-page aside, .detail-page main {
+    width: 100%;
+  }
+
+  .things {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media only screen and (max-width: 480px) {
   body {
     font-size: 16px;
+  }
+
+  .container {
+    width: 400px;
   }
 
   main, footer, img {
@@ -213,5 +252,9 @@ footer {
 
   aside, main {
     width: 100%;
+  }
+
+  .things {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
