@@ -69,7 +69,7 @@ router.get('/fish', async (req, res) => {
     fishString += '</ul>' 
 
     res.render('fishes', {
-      fishes: fishString,
+      fish: data.data,
       meta_description: "All the fish."
     })
   } catch (err) {
