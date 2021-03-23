@@ -32,6 +32,7 @@ p {
 blockquote {
   font-style: italic;
   margin: .5em 1em 1.5em 1em;
+  text-align: left;
 }
 
 header {
@@ -39,7 +40,7 @@ header {
   color: #fbfbfd;
   font-weight: bold;
   padding: .25em 1.75em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 header nav {
@@ -110,11 +111,11 @@ main {
 }
 
 .detail-page main {
-  width: 55%;
+  width: 60%;
 }
 
 .detail-page aside {
-  width: 45%;
+  width: 40%;
 }
 
 ul {
@@ -210,6 +211,32 @@ footer {
 
 .things a {
   text-decoration: none;
+}
+
+/* https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip {
+  position: relative;
+  display: inline-block
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: rgba(179,141,79, 0.85);
+  color: #fbfbfd;
+  padding: .3em .6em;
+  position: absolute;
+  z-index: 1;
+  border-radius: .20em;
+  bottom: 5%;
+  left: 40%; 
+  font-weight: bold;
+  font-size: .75em;
+  text-align: center;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
 }
 
 @media only screen and (max-width: 780px) {
