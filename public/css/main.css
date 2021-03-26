@@ -59,9 +59,10 @@ header nav {
 }
 
 .container .home-heading {
+  border: none;
   text-align: center;
   padding-top: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   margin-top: 0;
 }
 
