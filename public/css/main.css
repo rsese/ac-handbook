@@ -4,7 +4,7 @@ body {
   font-size: 22px;
   line-height: 1.5;
   color: #c48d3f;
-  margin: 0 0 24px 0;
+  margin: 0;
   padding: 0px;
   background-image: url('../images/animal-crossing-new-horizons-1million-artwork.jpg');
   word-wrap: break-word;
@@ -149,13 +149,16 @@ aside {
 
 footer {
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.95);
-  margin-top: 24px;
+  background-color: rgba(255, 250, 212, 0.95);
   padding-top: 24px;
-  border-top: 4px #c48d3f dashed;
-  padding: 32px;
+  padding: 16px 32px;
   width: 100%;
   margin: 0px auto;
+  margin-top: 4em;
+  text-align: center;
+  font-size: .75em;
+  color: #703c14;
+  font-weight: bold;
 }
 
 #new-comment-field {
