@@ -1,9 +1,21 @@
 {{>head}}
 <body>
   {{>header}}
-  <main>
-    {{{villagers}}}
-  </main>
-{{>footer}}
+  <div class="container">
+    <h1>villagers 👩‍🔬</h1>
+    <main>
+      <div class="things">
+        {{#each villagers}}
+          <div>
+            <a href="/villagers/{{this.id}}">{{this.name.name-USen}}</a>
+            <a href="/villagers/{{this.id}}">
+              <img src="{{this.image_uri}}" alt="{{this.name.name-USen}}">
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    </main>
+  </div>
+  {{>footer}}
 </body>
 </html>

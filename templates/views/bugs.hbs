@@ -1,9 +1,22 @@
 {{>head}}
 <body>
   {{>header}}
-  <main>
-    {{{bugs}}}
-  </main>
-{{>footer}}
+  <div class="container">
+    <h1>bugs 🐛</h1>
+    <main>
+      <div class="things">
+        {{#each bugs}}
+          <div class="tooltip">
+            <span class="tooltip-text">{{this.price}} 🔔</span>
+            <a href="/bugs/{{this.id}}">{{this.name.name-USen}}</a>
+            <a href="/bugs/{{this.id}}">
+              <img src="{{this.image_uri}}" alt="{{this.name.name-USen}}">
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    </main>
+  </div>
+  {{>footer}}
 </body>
 </html>

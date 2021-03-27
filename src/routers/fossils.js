@@ -6,15 +6,9 @@ const router = new express.Router()
 router.get('/fossils', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/fossils')
-    let fossilsString = '<ul>' 
-
-    for (fossil in data.data) {
-      fossilsString += `<li><a href="/fossils/${fossil}">${fossil}</a></li>`
-    }
-    fossilsString += '</ul>' 
 
     res.render('fossils', {
-      fossils: fossilsString,
+      fossils: data.data,
       meta_description: "All the fossils."
     })
   } catch (err) {

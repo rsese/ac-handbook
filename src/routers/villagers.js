@@ -6,15 +6,9 @@ const router = new express.Router()
 router.get('/villagers', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/villagers')
-    let villagerString = '<ul>' 
-
-    for (villager in data.data) {
-      villagerString += `<li><a href="/villagers/${data.data[villager].id}">${data.data[villager].name['name-USen']}</a></li>`
-    }
-    villagerString += '</ul>' 
 
     res.render('villagers', {
-      villagers: villagerString,
+      villagers: data.data,
       meta_description: "All the villagers."
     })
   } catch (err) {

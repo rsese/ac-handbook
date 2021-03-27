@@ -1,9 +1,22 @@
 {{>head}}
 <body>
   {{>header}}
-  <main>
-    {{{fossils}}}
-  </main>
-{{>footer}}
+  <div class="container">
+    <h1>fossils 🦴</h1>
+    <main>
+      <div class="things">
+        {{#each fossils}}
+          <div class="tooltip">
+            <span class="tooltip-text">{{this.price}} 🔔</span>
+            <a href="/fossils/{{this.name.name-USen}}">{{this.name.name-USen}}</a>
+            <a href="/fossils/{{this.name.name-USen}}">
+              <img src="{{this.image_uri}}" alt="{{this.name.name-USen}}">
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    </main>
+  </div>
+  {{>footer}}
 </body>
 </html>
