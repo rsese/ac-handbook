@@ -22,12 +22,14 @@ const init = async function() {
         // add new comment to comment list
         const createdComment = await response.json()
         const newComment = document.createElement('li')
+        const newCommentPre = document.createElement('pre')
         const newCommentTimeStamp = document.createElement('span')
 
         newCommentTimeStamp.classList.add('timeStamp')
         newCommentTimeStamp.appendChild(document.createTextNode(createdComment.timeStamp))
         newComment.appendChild(newCommentTimeStamp)
-        newComment.appendChild(document.createTextNode(createdComment.body))
+        newCommentPre.appendChild(document.createTextNode(createdComment.body))
+        newComment.appendChild(newCommentPre)
         document.querySelector('.comments').appendChild(newComment)
 
         newCommentField.value = ""
