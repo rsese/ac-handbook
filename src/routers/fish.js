@@ -61,12 +61,6 @@ router.post('/fish/:id/comments', async (req, res) => {
 router.get('/fish', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/fish')
-    let fishString = '<ul>' 
-
-    for (fish in data.data) {
-      fishString += `<li><a href="/fish/${data.data[fish].id}">${fish}</a></li>`
-    }
-    fishString += '</ul>' 
 
     res.render('fishes', {
       fish: data.data,
