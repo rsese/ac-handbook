@@ -82,6 +82,10 @@ nav .home-link {
   display: none;
 }
 
+.burger:focus {
+  outline: none;
+}
+
 .site-nav {
   margin: 0;
   padding: 0;
