@@ -1,6 +1,16 @@
 # Animal Crossing Handbook :notebook:
 
-Simple web client for http://acnhapi.com/!
+Simple web client on top of http://acnhapi.com/, just for fish, villagers, bugs, and fossils.  You can:
+
+* browse lists of each type 🕵️‍♀️
+* view individual fish, villagers, bugs, and fossils 🐟
+* add comments on each individual fish, villagers, bugs, and fossils 💬
+
+Made with:
+
+* Node + Express for the server
+* Handlebars templates
+* Firebase to store comments
 
 ## Thanks :bow:
 
