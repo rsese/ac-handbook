@@ -1,12 +1,34 @@
 {{>head}}
 <body>
   {{>header}}
-  <main>
-    <img class="frame" src="{{image_uri}}" alt="{{image_alt}}" />
-    <blockquote>
-      {{museum_phrase}}
-    </blockquote>
-  </main>
-{{>footer}}
+  <div class="container">
+    <h1>{{name}} 🐛</h1>
+    <div class="detail-page">
+      <main>
+        <img class="frame" src="{{image_uri}}" alt="{{image_alt}}" />
+        <h2>Comments ✏️</h2>
+        <section class="comments-container">
+          <ul class="comments">
+            {{#each comments}}
+              <li class="comment">
+                <span class="timeStamp">{{this.timeStamp}}</span>
+                <pre class="comment-body">{{this.body}}</pre>
+              </li>
+            {{/each}}
+          </ul>
+          <textarea id="new-comment-field" placeholder="add your comment!"></textarea>
+          <button id="save-comments-btn">save comments!</button>
+          <span class="saved-msg hide">saved ☑️!</span>
+        </section>
+      </main>
+      <aside>
+        <h2>Museum notes 🦉</h2>
+        <blockquote>
+          {{museum_phrase}}
+        </blockquote>
+      </aside>
+    </div>
+  </div>
+  {{>footer}}
 </body>
 </html>

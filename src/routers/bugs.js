@@ -6,15 +6,9 @@ const router = new express.Router()
 router.get('/bugs', async (req, res) => {
   try {
     const data = await axios.get('https://acnhapi.com/v1/bugs')
-    let bugsString = '<ul>' 
-
-    for (bug in data.data) {
-      bugsString += `<li><a href="/bugs/${data.data[bug].id}">${bug}</a></li>`
-    }
-    bugsString += '</ul>' 
 
     res.render('bugs', {
-      bugs: bugsString,
+      bugs: data.data,
       meta_description: "All the bugs."
     })
   } catch (err) {

@@ -3,7 +3,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 22px;
   line-height: 1.5;
-  color: #c48d3f;
+  color: #c18838;
   margin: 0;
   padding: 0px;
   background-image: url('../images/animal-crossing-new-horizons-1million-artwork.jpg');
@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: #6be4ea;
+  color: #0ea4ad;
   font-weight: bold;
 }
 
@@ -49,10 +49,16 @@ header nav {
   flex-direction: row;
 }
 
-.home-link {
-  width: 30%;
+header .site-icon {
+  margin: 0;
+  width: 32px;
+  vertical-align: middle;
+}
+
+nav .home-link {
+  width: 35%;
   display: block;
-  color: #fcfafb;
+  color: #fff;
   text-decoration: none;
   line-height: 2;
   text-align: left;
@@ -67,7 +73,7 @@ header nav {
 }
 
 .site-nav-container {
-  width: 70%;
+  width: 65%;
   background-color: #b38d4f;
   text-align: right;
 }
@@ -92,7 +98,7 @@ header nav {
 }
 
 .site-nav a {
-  color: #fcfafb;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -187,7 +193,7 @@ footer {
 
 .error {
   color:	white;
-  background-color: #EC6C6D;
+  background-color: #cc261e;
   padding: 1em;
 }
 
@@ -201,7 +207,7 @@ footer {
   background-color: #fdef75;
   margin: .6em 0;
   padding: .40em 1em;
-  color: #ee6f69;
+  color: #cc261e;
   font-size: .75em;
   font-weight: 600;
 }
@@ -229,7 +235,11 @@ footer {
 .things div {
   box-sizing: border-box;
   border: 6px double #c48d3f;
-  padding: .75em 0 0 0;
+  padding: .75em .25em .25em .25em;
+}
+
+.things img {
+  margin-bottom: 0px;
 }
 
 .things a {
