@@ -167,6 +167,14 @@ footer {
   font-weight: bold;
 }
 
+footer ul {
+  text-align: center;
+}
+
+footer ul li {
+  list-style-type: none;
+}
+
 #new-comment-field {
   width: 100%;
   padding: 1.2em;
