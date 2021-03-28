@@ -4,6 +4,9 @@
   <div class="container">
     <h1>fishes 🐟</h1>
     <main>
+      {{#if error}}
+      <h2 class="error">error: {{error}} 😿</h2>
+      {{/if}}
       <div class="things">
         {{#each fish}}
           <div class="tooltip">

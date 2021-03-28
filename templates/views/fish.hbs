@@ -3,6 +3,9 @@
   {{>header}}
   <div class="container">
     <h1>{{name}} 🐟</h1>
+    {{#if error}}
+      <h2 class="error">error: {{error}} 😿</h2>
+    {{/if}}
     <div class="detail-page">
       <main>
         <img class="frame" src="{{image_uri}}" alt="{{image_alt}}" />

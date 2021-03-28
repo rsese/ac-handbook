@@ -213,6 +213,12 @@ footer ul li {
   padding: 1em;
 }
 
+h2.error {
+  color: #cc261e;
+  background-color: #fff; 
+  padding: 0;
+}
+
 .comments {
   display: block;
 }
