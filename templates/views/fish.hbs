@@ -9,12 +9,16 @@
         <h2>Comments ✏️</h2>
         <section class="comments-container">
           <ul class="comments">
-            {{#each comments}}
-              <li class="comment">
-                <span class="timeStamp">{{this.timeStamp}}</span>
-                <pre class="comment-body">{{this.body}}</pre>
-              </li>
-            {{/each}}
+            {{#if comments_error}}
+              <li class="comment-error">Sorry, error getting comments 😿!</li>
+            {{else}}
+              {{#each comments}}
+                <li class="comment">
+                  <span class="timeStamp">{{this.timeStamp}}</span>
+                  <pre class="comment-body">{{this.body}}</pre>
+                </li>
+              {{/each}}
+            {{/if}}
           </ul>
           <textarea id="new-comment-field" placeholder="add your comment!"></textarea>
           <button id="save-comments-btn">save comments!</button>

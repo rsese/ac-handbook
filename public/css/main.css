@@ -228,6 +228,10 @@ footer ul li {
   font-weight: 600;
 }
 
+.comments .comment-error {
+  text-align: center;
+}
+
 .comments .comment-body {
   white-space: break-spaces;
 }
