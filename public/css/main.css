@@ -49,8 +49,14 @@ header nav {
   flex-direction: row;
 }
 
+header .site-icon {
+  margin: 0;
+  width: 32px;
+  vertical-align: middle;
+}
+
 nav .home-link {
-  width: 30%;
+  width: 35%;
   display: block;
   color: #fff;
   text-decoration: none;
@@ -67,7 +73,7 @@ nav .home-link {
 }
 
 .site-nav-container {
-  width: 70%;
+  width: 65%;
   background-color: #b38d4f;
   text-align: right;
 }
@@ -187,7 +193,7 @@ footer {
 
 .error {
   color:	white;
-  background-color: #ea4a42;
+  background-color: #cc261e;
   padding: 1em;
 }
 
@@ -201,7 +207,7 @@ footer {
   background-color: #fdef75;
   margin: .6em 0;
   padding: .40em 1em;
-  color: #ea4a42;
+  color: #cc261e;
   font-size: .75em;
   font-weight: 600;
 }
