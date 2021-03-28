@@ -108,6 +108,10 @@ nav .home-link {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+.not-found .container {
+  width: 580px;
+}
+
 .detail-page {
   display: flex;
   flex-direction: row;
@@ -349,7 +353,7 @@ footer ul li {
     font-size: 16px;
   }
 
-  .container, header {
+  .not-found .container, .container, header {
     width: 100%;
   }
 
