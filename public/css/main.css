@@ -25,6 +25,11 @@ img {
   border: 6px double #c48d3f; 
 }
 
+.home-frame {
+  border: 1px solid #444;
+  box-shadow: 4px 4px #bbb;
+}
+
 p {
   margin-bottom: 1.5em;
 }
